@@ -11,7 +11,11 @@ require('dotenv').config();
 
 let Todo = require('./todo.model');
 
-app.use(cors());
+
+app.use(cors({
+    origin: '*'
+}));
+
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.SERVER, { useNewUrlParser: true });
